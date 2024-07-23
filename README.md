@@ -1,4 +1,5 @@
 # LogNimbus
+
 ![lognimbus](lognimbus.png)
 
 LogNimbus is a YAML-based logging library with rich formatting for container and Kubernetes environments.
@@ -24,11 +25,40 @@ pip install lognimbus
 
 ## Usage
 
+**Basic Usage**
+
+You can start using LogNimbus with minimal configuration, which defaults to console logging only.
+
+```python
+from lognimbus import YamlLogger
+
+# Initialize the logger with default settings (console logging only)
+logger = YamlLogger()
+
+# Log messages at different levels
+logger.debug(msg="This is a debug message")
+logger.info(msg="This is an info message")
+logger.warning(msg="This is a warning message")
+logger.error(msg="This is an error message")
+logger.critical(msg="This is a critical message")
+
+```
+
+**Advanced Usage**
+
+Override default settings and enable additional features as needed.
 ```python
 from lognimbus import YamlLogger, LogContext
 
-# Initialize the logger from a configuration file
-logger = YamlLogger(config_file='lognimbus_config.yml')  # Adjust path as needed
+# Initialize the logger with custom settings
+logger = YamlLogger(
+    log_file='app_logs.yml',
+    log_rotation_enabled=True,
+    max_log_size=5242880,  # 5MB
+    backup_count=3,
+    prometheus_enabled=True,
+    slack_webhook_url='https://hooks.slack.com/services/your/webhook/url'
+)
 
 # Log messages at different levels
 logger.debug(msg="This is a debug message")
@@ -59,11 +89,35 @@ sensitive_data = {
     'credit_card_number': '1234-5678-9876-5432'
 }
 logger.info(msg="User payment processing", data=sensitive_data)
+```
 
+## Integration with Python's Built-in Logging Module
 
+You can integrate LogNimbus with Python's built-in logging module for seamless logging.
+
+```python
+from lognimbus import YamlLogger, LogNimbusHandler
+import logging
+
+# Initialize the logger
+logger = YamlLogger()
+
+# Integrate with Python's built-in logging module
+log_handler = LogNimbusHandler(logger)
+logging.basicConfig(level=logging.DEBUG, handlers=[log_handler])
+python_logger = logging.getLogger(__name__)
+
+# Log messages at different levels using the standard logging module
+python_logger.debug("This is a debug message")
+python_logger.info("This is an info message")
+python_logger.warning("This is a warning message")
+python_logger.error("This is an error message")
+python_logger.critical("This is a critical message")
 ```
 
 ## Configuratio
+
+You can also configure LogNimbus using a YAML configuration file. Here is an example configuration file (lognimbus_config.yml):
 
 ```yaml
 lognimbus:
@@ -81,7 +135,20 @@ lognimbus:
     fields:
       - "password"
       - "credit_card_number"
+  notifications:
+    slack_webhook_url: "https://hooks.slack.com/services/your/webhook/url"  # Optional
+```
 
+To use the configuration file:
+
+```python
+from lognimbus import YamlLogger
+
+# Initialize the logger from a configuration file
+logger = YamlLogger(config_file='lognimbus_config.yml')
+
+# Log messages as usual
+logger.info(msg="Configured via YAML file")
 ```
 
 ## Why YAML-Based Logging?
