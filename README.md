@@ -17,6 +17,42 @@ LogNimbus is a YAML-based logging library with rich formatting for container and
 - **Contextual Logging**: Includes context in log messages for better traceability.
 - **Sensitive Data Masking**: Masks sensitive fields in the log data to protect sensitive information.
 
+## Roadmap
+
+# LogNimbus Roadmap
+
+| Feature                          | Status       | Description                                                                                     |
+|----------------------------------|--------------|-------------------------------------------------------------------------------------------------|
+| Human-Readable Format            | Implemented  | YAML's indentation-based structure makes logs easy to read and write.                           |
+| Structured Data                  | Implemented  | Supports hierarchical logging with nested structures.                                           |
+| Tool Compatibility               | Implemented  | Seamlessly integrates with tools like Fluentd and Logstash.                                     |
+| Unified Configuration            | Implemented  | Aligns with YAML-based configuration management tools like Kubernetes and Helm.                 |
+| Extensible and Flexible          | Implemented  | Easily add custom fields and adapt log structures.                                              |
+| Machine-Readable                 | Implemented  | Simplifies automated log analysis and processing due to its structured nature.                  |
+| Error Reduction                  | Implemented  | Schema validation helps maintain consistent and error-free log entries.                         |
+| Prometheus Monitoring            | Implemented  | Integrated Prometheus metrics to monitor logging activity.                                      |
+| Contextual Logging               | Implemented  | Includes context in log messages for better traceability.                                       |
+| Sensitive Data Masking           | Implemented  | Masks sensitive fields in the log data to protect sensitive information.                        |
+| Dynamic Configuration Reloading  | Implemented  | Allows reloading configuration at runtime without restarting the application.                   |
+| Integration with Logging Module  | Implemented  | Provides a handler to integrate with Python’s built-in logging module.                          |
+| Error Notifications via Slack    | Implemented  | Sends error notifications to Slack using a webhook URL.                                         |
+| Asynchronous Logging             | Implemented  | Implemented to avoid blocking operations.                                                       |
+| Log Rotation and Retention       | Implemented  | Supports log rotation based on size and retention policies.                                     |
+| Time-Based Log Rotation          | Planned      | Rotate logs based on time intervals (daily, weekly, monthly).                                   |
+| Nested Contexts                  | Planned      | Support nested contexts for more granular contextual information.                               |
+| Custom Retention Policies        | Planned      | Allow defining custom retention policies for old logs.                                          |
+| Error Notifications via Email    | Planned      | Integrate with email notification systems.                                                      |
+| Retry Mechanism for Logging      | Planned      | Implement a retry mechanism for logging failures.                                               |
+| Advanced Log Filters             | Planned      | Allow users to define filters to include or exclude certain log messages.                       |
+| Search and Query Interface       | Planned      | Provide an interface to search and query logs.                                                  |
+| Custom Metrics                   | Planned      | Allow users to define custom Prometheus metrics related to their application.                   |
+| Health Check Endpoint            | Planned      | Provide an endpoint to monitor the health of the logging system.                                |
+| Encryption for Log Files         | Planned      | Encrypt log files to ensure data security.                                                      |
+| Audit Logging                    | Planned      | Provide tamper-evident logging for audit purposes.                                              |
+| Interactive Log Viewer           | Planned      | Develop a web-based or terminal-based interactive log viewer for exploring logs.                |
+| Customizable Log Formats         | Planned      | Allow users to define custom log formats and templates.                                         |
+
+
 ## Installation
 
 ```bash
