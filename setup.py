@@ -12,7 +12,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         'PyYAML',
-        'rich'
+        'rich',
+        'prometheus_client'
     ],
     classifiers=[
         'Programming Language :: Python :: 3',

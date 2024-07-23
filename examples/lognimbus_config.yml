@@ -13,3 +13,5 @@ lognimbus:
     fields:
       - "password"
       - "credit_card_number"
+  notifications:
+    slack_webhook_url: "https://hooks.slack.com/services/your/webhook/url"
