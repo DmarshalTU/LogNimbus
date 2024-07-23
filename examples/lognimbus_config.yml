@@ -1,0 +1,15 @@
+lognimbus:
+  log_file: "app_logs.yml"
+  additional_log_file: "backup_logs.yml"
+  console_logging: true
+  log_level: "INFO"
+  log_rotation:
+    enabled: true
+    max_size: 10485760  # 10MB
+    backup_count: 5
+  prometheus_port: 8000
+  sensitive_data_masking:
+    enabled: true
+    fields:
+      - "password"
+      - "credit_card_number"

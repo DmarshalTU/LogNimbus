@@ -1,0 +1,3 @@
+pyyaml
+rich
+prometheus_client
