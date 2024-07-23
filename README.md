@@ -197,3 +197,5 @@ YAML-based logging offers several advantages:
 - Consistency: Uniform format for both configuration and logs in cloud-native environments.
 
 LogNimbus makes logging in YAML format simple and effective, enhancing both human readability and machine parsing capabilities, making it an excellent choice for modern development practices and cloud-native applications.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/100kw)
