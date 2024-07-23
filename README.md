@@ -1,4 +1,5 @@
 # LogNimbus
+![lognimbus](lognimbus.png)
 
 LogNimbus is a YAML-based logging library with rich formatting for container and Kubernetes environments.
 
