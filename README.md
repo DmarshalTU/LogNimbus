@@ -2,6 +2,8 @@
 
 ![lognimbus](lognimbus.png)
 
+[![Upload Python Package](https://github.com/DmarshalTU/LogNimbus/actions/workflows/python-publish.yml/badge.svg)](https://github.com/DmarshalTU/LogNimbus/actions/workflows/python-publish.yml)
+
 LogNimbus is a YAML-based logging library with rich formatting for container and Kubernetes environments.
 
 ## Features
